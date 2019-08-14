@@ -1,99 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Street View Side-By-Side</title>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style>
-      html, body {
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        border: 0;
-      }
-      #google-street-view {
-        height: 100%;
-        width: 100%;
-        border: 0;
-        margin: 0;
-        padding: 0;
-      }
-      #google-map {
-        position: absolute;
-        top: 8px;
-        left: 8px;
-        height: 25%;
-        width: 25%;
-        z-index: 10;
-        border: 0;
-        margin: 0;
-        padding: 0;
-      }
-      #gui {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        height: 100%;
-        width: 100%;
-        z-index: 20;
-        /* border: 0;
-        margin: 0;
-        padding: 0; */
-      }
+<head>
+<title>Page Title</title>
+</head>
+<body>
 
-      #button-book {
-        position: absolute;
-        left: 2rem;
-        bottom: 4rem;
-        z-index: 10;
-        font-size: 2rem;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- <div id="map"></div> -->
-    <iframe id="google-map" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJSaniimwayUwR1yIJ6iACBvE&key=AIzaSyD4GLXldhnA6Fcc6yJ9WqxEJrqM59b9RMk"></iframe>
-    <div id="google-street-view"></div>
-    <!-- <div id="gui" class="container">
-      <div class="row">
-          <button type="button" class="btn btn-primary btn-lg">Primary</button>
-      </div>
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
 
-    </div> -->
-    <button id="button-book" type="button" class="btn btn-primary btn-lg">Book a Trip!</button>
-    <script>
-
-      function initialize() {
-        var location = {lat: 45.5017941, lng: -73.5673434};
-        // var map = new google.maps.Map(document.getElementById('map'), {
-        //   center: location,
-        //   zoom: 14
-        // });
-        var panorama = new google.maps.StreetViewPanorama(
-            document.getElementById('google-street-view'), {
-              position: location,
-              // pano: "G_B8QocPL10uI7D2B0XKkA",
-              pov: {
-                heading: 34,
-                pitch: 10
-              },
-              clickToGo: false,
-
-              linksControl: false,
-              panControl: false,
-              disableDefaultUI: false,
-              fullscreenControl: true,
-              showRoadLabels: false
-            });
-        // map.setStreetView(panorama);
-      }
-    </script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4GLXldhnA6Fcc6yJ9WqxEJrqM59b9RMk&callback=initialize">
-    </script>
-  </body>
-</html>
+</body>
+</html
