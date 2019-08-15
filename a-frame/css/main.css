@@ -1,0 +1,139 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+}
+
+#google-map {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 25%;
+  height: 25%;
+  z-index: 20;
+}
+
+#gui-top-left {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  /* height: 6rem; */
+  max-width: 50%;
+  z-index: 20;
+  background: rgba(192, 192, 192, 0);
+}
+
+#gui-bottom-left {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  /* height: 6rem; */
+  /* max-width: 50%; */
+  z-index: 20;
+  background: rgba(192, 192, 192, 0.5);
+}
+
+#gui-bottom-right {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  /* height: 6rem; */
+  /* max-width: 50%; */
+  z-index: 20;
+  padding: 0.5rem;
+  background: rgba(192, 192, 192, 0.5);
+}
+
+#div-location-card-body {
+  padding: 1rem;
+}
+
+#div-location-card {
+  width: 16rem;
+  /* border: 0; */
+}
+
+#three-container {
+  /* height: 100%;
+  width: 100%; */
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+#button-help {
+  font-size:1.5rem;
+  border-radius: 50%;
+  width: 3.2rem;
+  height: 3.2rem;"
+}
+
+#button-location-info {
+  font-size:1rem !important;
+  /* border-radius: 50%; */
+
+}
+
+/* .modal-content {
+  background: rgba(255,255,255,0.5)
+} */
+#button-roam-around {
+  position: absolute;
+  bottom: 8rem;
+  right: 2rem;
+  z-index: 20;
+  border-radius: 2rem;
+}
+
+.btn {
+  font-size: 1.5rem !important;
+}
+
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+  .btn {
+    font-size: 1.8rem !important;
+  }
+
+  #button-help {
+    font-size:1.8rem;
+    width: 3.6rem;
+    height: 3.6rem;"
+  }
+
+  #div-location-card {
+    width: 24rem;
+  }
+
+  #div-location-card-body {
+    padding: 1.25rem;
+  }
+
+  #gui-bottom-right {
+
+    padding: 0.8rem;
+  }
+
+  #button-roam-around {
+    bottom: 10rem;
+
+  }
+
+  #button-location-info {
+    font-size:1.2rem !important;
+  }
+}
+
+@media (min-width: 1200px) {
+
+}

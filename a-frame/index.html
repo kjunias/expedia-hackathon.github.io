@@ -4,14 +4,24 @@
     <meta charset="utf-8">
     <title>Anywhere 360 Image Viewer</title>
     <meta name="description" content="Anywhere 360 Image Viewer">
+    <!-- <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no" /> -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <!-- <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script> -->
+    <!-- <link href="vendors/fontawesome-free-5.10.1-web/css/all.css" rel="stylesheet"> -->
     <script src="https://kit.fontawesome.com/c3366ae51d.js"></script>
+    <link rel="stylesheet" href="css/main.css">
 
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="https://kit.fontawesome.com/c3366ae51d.js"></script>
+    <script src="vendors/three/three.min.js"></script>
+    <script src="vendors/three/WebGL.js"></script>
+    <script src="vendors/three/OrbitControls.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/three-script.js" defer></script>
+    <!-- <script src="vendors/three/TrackballControls.js"></script> -->
 
   </head>
   <body>
@@ -24,8 +34,8 @@
       <div class="float-left">
         <!-- <button type="button" class="btn btn-primary btn-lg mx-2 my-2 ">Book a Trip Now!</button> -->
 
-        <button type="button" class="btn btn-primary btn-lg" style="font-size:2.8rem; border-radius: 50%; width: 5rem; height:5rem;"
-          data-toggle="modal" data-target="#exampleModalCenter"
+        <button id="button-help" type="button" class="btn btn-primary"
+          data-toggle="modal" data-target="#modal-help"
         >
         <i class="fas fa-question"></i>
         </button>
@@ -34,11 +44,29 @@
     <div id="gui-bottom-left" >
       <!-- <div class="row my-4"> -->
       <div id="div-location-card" class="card" >
-        <img class="card-img-top" src="assets/images/locations/phoenix/thumbnails/thumbnail-phoenix.webp" alt="Card image cap">
-        <div class="card-body ">
-          <h2 class="card-title mb-4">Phoenix</h2>
+        <div class="card-header p-0">
+        <img class="card-img-top " src="assets/images/locations/phoenix/thumbnails/thumbnail-phoenix.webp" >
+        </div>
+
+        <div id="div-location-card-body" class="card-body ">
+          <div class="mt-lg-2 mb-lg-4 mt-0 mb-2">
+            <h3 class="card-title ">
+              <span class="mr-2 ">
+              Phoenix
+              </span>
+              <button id="button-location-info" class="btn btn-primary mb-1 mt-0" type="button"
+              data-toggle="modal" data-target="#modal-location-info"
+              >
+
+                  More Info
+                  <!-- <i class="fas fa-info ml-1"></i> -->
+              </button>
+            </h3>
+
+          </div>
+
           <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-          <button type="button" class="btn btn-danger btn-lg" onclick=" window.open('https://www.expedia.com/Phoenix.d178298.Destination-Travel-Guides','_blank')">Book a Vacation!</button>
+          <button type="button" class="btn btn-block btn-danger" onclick=" window.open('https://www.expedia.com/Phoenix.d178298.Destination-Travel-Guides','_blank')">BOOK A VACATION!</button>
         </div>
       </div>
       <!-- <div class="m-0 float-left">
@@ -49,7 +77,7 @@
     </div>
     <div id="gui-bottom-right" >
       <!-- <div class="row my-4"> -->
-        <div class="mx-3 my-3" style="text-align: right;">
+        <div style="text-align: right; ">
           <!-- <button type="button" class="btn btn-primary btn-lg mx-2 my-2 ">Book a Trip Now!</button> -->
           <button type="button" class="btn btn-primary btn-bottom-right mr-3">
           <i class="fas fa-backward"></i>
@@ -62,12 +90,20 @@
                 Region: Global
               </button>
               <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+
+                <a class="dropdown-item" href="#">Europe</a>
                 <a class="dropdown-item" href="#">Asia</a>
                 <a class="dropdown-item" href="#">South America</a>
+                <a class="dropdown-item" href="#">Australia & South Pacific</a>
+                <a class="dropdown-item" href="#">Mexico & Central America</a>
+                <a class="dropdown-item" href="#">North America</a>
+                <a class="dropdown-item" href="#">Caribean</a>
+                <a class="dropdown-item" href="#">Africa & Indian Ocean</a>
+                <a class="dropdown-item" href="#">Middle East</a>
               </div>
             </div>
-            <button type="button" class="btn btn-success btn-bottom-right">Roam
-            <i class="fas fa-forward"></i>
+            <button type="button" class="btn btn-success btn-bottom-right">Next
+              <i class="fas fa-plane"></i>
             </button>
           </div>
 
@@ -77,13 +113,18 @@
       <!-- </div> -->
 
     </div>
+    <button
+    id="button-roam-around"
+    class="btn btn-warning btn-lg" style="color:white">Roam
+    <i class="fas fa-running ml-1 fa-lg"></i>
+    </button>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="modal-help" tabindex="-1" role="dialog" aria-labelledby="modal-help-title" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Help!</h5>
+            <h5 class="modal-title" id="modal-help-long-title">Help!</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -98,11 +139,50 @@
         </div>
       </div>
     </div>
+
+    <div class="modal fade" id="modal-location-info" tabindex="-1" role="dialog" aria-labelledby="modal-location-info-title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title mx-auto" id="modal-location-info-long-title" >Phoenix</h2>
+            <button type="button" class="close" data-dismiss="modal" style="position:absolute; right:1rem; " aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body mx-4" style="">
+            <img src="assets/images/locations/phoenix/thumbnails/thumbnail-phoenix.webp" style="width:100%">
+            <p class="mt-4" style="font-size:1.5rem">
+              Phoenix is a sunny oasis with an equally cheerful atmosphere. Explore Downtown Phoenix on foot to enjoy the warm weather and explore award-winning restaurants, lively nightlife and a charming historic district. Stop at Roosevelt Row to learn about the city’s burgeoning arts and music community.
+
+Discover numerous cultural institutions in Phoenix. Browse through classic and modern art in the Phoenix Art Museum. Learn about the Southwest’s rich Native American history in the Heard Museum. See and play instruments from across the world at the Musical Instrument Museum and learn through interactive exhibits in the Arizona Science Center. The Hall of Flame Fire Museum covers 300 years of firefighting history.
+
+See over 1,000 animals, including many endangered species, in the Phoenix Zoo. Follow themed trails taking you from Arizona, Africa and the tropics to family-friendly farms.
+
+Wrigley Mansion sits atop La Colina Solana, which means small, sunny hill. It certainly lives up to its name. From the stately home enjoy views of Downtown Phoenix, Camelback Mountain and the wider Valley of the Sun.
+
+Find Hole-in-the-Rock on a small sandstone hill in Papago Park. The unique geological phenomenon has been in the works for millions of years and offers stunning panoramic views of Phoenix.
+
+Learn about the Valley of the Sun’s first indigenous residents at Pueblo Grande Museum and Archaeological Park. Discover the homes and tools of a Native American Indian tribe that dates back about 1,500 years.
+
+The Desert Botanical Garden shows that even the driest deserts host a wealth of life. In the Sonoran Desert, pick out the iconic Camelback Mountain, which resembles a resting camel. The mountain’s “hump” offers some of the best views in the state.
+
+Use Phoenix as your gateway to the Valley of the Sun and greater Arizona. Visit nearby Scottsdale, home to the Scottsdale Museum of Contemporary Art and Taliesin West, architect Frank Lloyd Wright’s desert masterpiece. Mesa, Flagstaff and Fountain Hills are also unique destinations worth visiting.
+            </P>
+          </div>
+          <div class="modal-footer " style="text-align: center;">
+            <button type="button" class="btn btn-danger mx-auto my-2 btn-lg" data-dismiss="modal">BOOK A VACATION!</button>
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- A-Frame Scene -->
-    <a-scene background="color: #FAFAFA" vr-mode-ui="enabled: false">
+    <!-- <a-scene background="color: #FAFAFA" vr-mode-ui="enabled: false">
       <a-box color="tomato" depth="2" height="2" width="2" position="2 0 5" ></a-box>
       <a-sky src="assets/images/locations/phoenix/360/phoenix_01.jpg" rotation="0 225 0"></a-sky>
       <a-camera position="0 0 0" ></a-camera>
-    </a-scene>
+    </a-scene> -->
+    <div id="three-container">
+    </div>
   </body>
 </html>
