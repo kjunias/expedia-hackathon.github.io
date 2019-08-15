@@ -11,7 +11,7 @@
       "bookLink":"https://www.expedia.com/Chicago.d178248.Destination-Travel-Guides",
       "thumbnail":"assets/images/locations/chicago/thumbnails/chicago.webp",
       "googleMapEmbedUrl":"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJy3mhUO0SK4cRrBtKNfjHaYw&key=AIzaSyD4GLXldhnA6Fcc6yJ9WqxEJrqM59b9RMk",
-      "region":""
+      "region":"North America"
     },
     {
       "cityName": "Denver",
@@ -24,7 +24,8 @@
       ],
       "bookLink":"https://www.expedia.com/Denver.d178254.Destination-Travel-Guides",
       "thumbnail":"assets/images/locations/denver/thumbnails/denver.webp",
-      "googleMapEmbedUrl":"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJy3mhUO0SK4cRrBtKNfjHaYw&key=AIzaSyD4GLXldhnA6Fcc6yJ9WqxEJrqM59b9RMk"
+      "googleMapEmbedUrl":"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJy3mhUO0SK4cRrBtKNfjHaYw&key=AIzaSyD4GLXldhnA6Fcc6yJ9WqxEJrqM59b9RMk",
+      "region":"North America"
     },
     {
       "cityName": "Grand Canyon",
@@ -36,7 +37,8 @@
       ],
       "bookLink":"https://www.expedia.com/Grand-Canyon.d6140738.Destination-Travel-Guides",
       "thumbnail":"assets/images/locations/grand-canyon/thumbnails/grand-canyon.webp",
-      "googleMapEmbedUrl":"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJy3mhUO0SK4cRrBtKNfjHaYw&key=AIzaSyD4GLXldhnA6Fcc6yJ9WqxEJrqM59b9RMk"
+      "googleMapEmbedUrl":"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJy3mhUO0SK4cRrBtKNfjHaYw&key=AIzaSyD4GLXldhnA6Fcc6yJ9WqxEJrqM59b9RMk",
+      "region":"North America"
     },
     {
       "cityName": "New York",
@@ -48,7 +50,8 @@
       ],
       "bookLink":"https://www.expedia.com/New-York.d178293.Destination-Travel-Guides",
       "thumbnail":"assets/images/locations/new-york/thumbnails/new-york.webp",
-      "googleMapEmbedUrl":"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJy3mhUO0SK4cRrBtKNfjHaYw&key=AIzaSyD4GLXldhnA6Fcc6yJ9WqxEJrqM59b9RMk"
+      "googleMapEmbedUrl":"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJy3mhUO0SK4cRrBtKNfjHaYw&key=AIzaSyD4GLXldhnA6Fcc6yJ9WqxEJrqM59b9RMk",
+      "region":"North America"
     },
     {
       "cityName": "Phoenix",
@@ -61,7 +64,8 @@
       ],
       "bookLink":"https://www.expedia.com/Phoenix.d178298.Destination-Travel-Guides",
       "thumbnail":"assets/images/locations/phoenix/thumbnails/thumbnail-phoenix.webp",
-      "googleMapEmbedUrl":"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJy3mhUO0SK4cRrBtKNfjHaYw&key=AIzaSyD4GLXldhnA6Fcc6yJ9WqxEJrqM59b9RMk"
+      "googleMapEmbedUrl":"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJy3mhUO0SK4cRrBtKNfjHaYw&key=AIzaSyD4GLXldhnA6Fcc6yJ9WqxEJrqM59b9RMk",
+      "region":"North America"
     },
     {
       "cityName": "Sedona",
@@ -73,7 +77,8 @@
       ],
       "bookLink":"https://www.expedia.com/Sedona.d6054771.Destination-Travel-Guides",
       "thumbnail":"assets/images/locations/sedona/thumbnails/sedona.webp",
-      "googleMapEmbedUrl":"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJy3mhUO0SK4cRrBtKNfjHaYw&key=AIzaSyD4GLXldhnA6Fcc6yJ9WqxEJrqM59b9RMk"
+      "googleMapEmbedUrl":"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJy3mhUO0SK4cRrBtKNfjHaYw&key=AIzaSyD4GLXldhnA6Fcc6yJ9WqxEJrqM59b9RMk",
+      "region":"North America"
     }
   ]
 }
