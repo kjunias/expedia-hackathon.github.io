@@ -47,12 +47,23 @@ html, body {
   background: rgba(192, 192, 192, 0.5);
 }
 
+#card-summary {
+  font-size: 16px;
+}
+
+#card-more-info-link {
+  color: #007bff7a;
+  cursor: pointer;
+}
+
 #div-location-card-body {
   padding: 1rem;
+  padding-top: 0.50rem;
 }
 
 #div-location-card {
   width: 16rem;
+  background-color: rgba(255, 255, 255, 0.70)
   /* border: 0; */
 }
 
@@ -86,6 +97,10 @@ html, body {
   right: 2rem;
   z-index: 20;
   border-radius: 2rem;
+}
+
+#button-location-card-book{
+  opacity: 0.85;
 }
 
 .btn {
