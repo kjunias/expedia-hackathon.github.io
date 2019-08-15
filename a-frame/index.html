@@ -73,10 +73,8 @@
       <!-- <div class="row my-4"> -->
         <div style="text-align: right; ">
           <!-- <button type="button" class="btn btn-primary btn-lg mx-2 my-2 ">Book a Trip Now!</button> -->
-          <button id="button-previous-location" type="button" class="btn btn-primary btn-bottom-right mr-3 disabled" onclick="onClickPreviousLocationButton()"
-          >
-          <i class="fas fa-backward"></i>
-          Previous
+          <button id="button-previous-location" type="button" class="btn btn-primary btn-bottom-right mr-3 disabled" onclick="onClickPreviousLocationButton()">
+            <i class="fas fa-plane fa-flip-horizontal"></i>
           </button>
           <div class="btn-group " role="group" aria-label="Button group with nested dropdown">
 
@@ -98,7 +96,7 @@
                 <!-- <a class="dropdown-item" href="#" onclick="onClickRegionOption('Middle East')">Middle East</a> -->
               </div>
             </div>
-            <button type="button" class="btn btn-success btn-bottom-right" onclick="onClickNextLocationButton()">Next
+            <button type="button" id="button-next-location" class="btn btn-success btn-bottom-right" onclick="onClickNextLocationButton()">
               <i class="fas fa-plane"></i>
             </button>
           </div>
@@ -111,9 +109,7 @@
     </div>
     <button
     id="button-roam-around"
-    class="btn btn-warning btn-lg" style="color:white" onclick="onClickRoamButton()">Roam
-
-    <i class="fas fa-running ml-1 fa-lg"></i>
+    class="btn btn-outline-secondary btn-lg" style="color:white" onclick="onClickRoamButton()"><i class="fas fa-random ml-1 fa-lg"></i>
     </button>
 
     <!-- Modal -->

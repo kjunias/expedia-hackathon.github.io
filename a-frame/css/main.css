@@ -105,6 +105,7 @@ html, body {
   right: 2rem;
   z-index: 20;
   border-radius: 2rem;
+  border-color: #cac5c5de;
 }
 
 #button-location-card-book{
@@ -161,7 +162,19 @@ html, body {
 
   #button-roam-around {
     bottom: 10rem;
+    color: #ffffffde;
+  }
 
+  #button-region {
+    background-color: #007bff6e;
+  }
+
+  #button-previous-location {
+    background-color: #007bff8c;
+  }
+
+  #button-next-location {
+    background-color: #ffc107a3;
   }
 
   #button-location-info {
