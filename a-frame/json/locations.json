@@ -10,7 +10,8 @@
       ],
       "bookLink":"https://www.expedia.com/Phoenix.d178298.Destination-Travel-Guides",
       "thumbnail":"assets/images/locations/phoenix/thumbnails/thumbnail-phoenix.webp",
-      "googleMapEmbedUrl":"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJy3mhUO0SK4cRrBtKNfjHaYw&key=AIzaSyD4GLXldhnA6Fcc6yJ9WqxEJrqM59b9RMk"
+      "googleMapEmbedUrl":"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJy3mhUO0SK4cRrBtKNfjHaYw&key=AIzaSyD4GLXldhnA6Fcc6yJ9WqxEJrqM59b9RMk",
+      "region":""
     },
     {
       "cityName": "Denver",
@@ -18,7 +19,7 @@
       "title": "Experience the theater, museums, and art in Denver!",
       "description": "Denver’s nickname, Mile High City, comes from its 5,280-foot (1,600-meter) elevation above sea level. Its setting in the Rocky Mountains gives the city great natural beauty and 300 days of sunshine annually. Enjoy its outdoor excitement and great cultural activities. Hop on the free shuttle bus running along the 1-mile (1.6-kilometer) long pedestrianized 16th Street Mall. The street features numerous shopping, dining and entertainment choices. Bring your ID to tour the Money Museum at the Federal Reserve Bank of Kansas City, Denver Branch and walk out with a bag of shredded money. Beyond the mall’s southern end, look for the Colorado State Capitol Building’s golden dome. Near the northern end is Larimer Square, a shopping and dining area with historic structures from the 1800s. A few blocks east, watch the Colorado Rockies play baseball at Coors Field. Travel west to tailgate at Sports Authority Field at Mile High where the Broncos play NFL football. Plan a family vacation with varied activities. See shade, water, ornamental and Western landscapes at the Denver Botanic Gardens in downtown Denver. Walk north to City Park for the Denver Zoo, the Denver Museum of Nature and Science and the City Park Golf Course. Drive west through the pleasant residential neighborhood of Lakewood to reach Red Rocks Park and Amphitheatre, where the natural acoustics of this beautiful setting enhance major concerts. Colorado has some of the country’s best skiing, with wide glades, powder bowls and steep mogul fields. Travel to top resorts within a 90-minute drive north or west of Denver including Echo Mountain, Eldora, Keystone, Loveland and Winter Park. These and other areas in the Rocky Mountains and foothills also offer exciting non-winter activities of hiking, mountain biking, fishing, hunting and boating. Drive north about 1.5 hours out of Denver to approach Rocky Mountain National Park. View Longs Peak and explore some of the park’s 150 lakes and 450 miles (725 kilometers) of streams. Look for bighorn sheep, moose and beavers in this huge designated wilderness area.",
       "panoramas": [
-        "assets/images/locations/denver/360/denver_01.jpg",
+
         "assets/images/locations/denver/360/denver_aquarium_01.jpg",
         "assets/images/locations/denver/360/denver_aquarium_02.jpg"
       ],
@@ -69,7 +70,7 @@
       "title": "Get away to Sedona! Enjoy the hiking, riverfront, and castle.",
       "description": "Known as “Red Rock Country,” Sedona, Arizona offers visitors a huge range of outdoor sports and activities amid a backdrop of spectacular scenery, a robust spiritual and artistic community, many ancient dwellings and more than 80 galleries. Sedona’s red sandstone formations make a stunning backdrop for many outdoor pursuits. Rent a motorbike or buggy and take a self-guided tour through to the Grand Canyon or one of the other nearby landmarks, such as the Wupatki and Sunset Crater National Monument. Make the most of over 200 miles (320 kilometers) of hiking and biking trails that wind their way through buttes and monoliths, deep canyons and thick forests. The trails offer different levels of difficulty and different experiences. Some lead to high elevations and sweeping views, others to winding creeks and unusual geological features. Bikes and hiking equipment are readily available for rent. For biking enthusiasts there is an annual mountain biking festival. Visit one of the area’s many spiritual guides and healers who have inhabited Sedona for many years, and who claim the area possesses extraordinary powers for meditation and healing. Take a tour to Bell Rock, Airport Mesa, Cathedral Rock or Boynton Canyon, which some claim were created by electromagnetic vortexes of energy. For a taste of the rich Native American history of the area, visit the Palatki and Honanki heritage sites, where you can see ancient cliff dwellings and rock art. Montezuma’s Castle, a five-story, 20-room dwelling built by the Sinagua farmers in the 12th century, is considered by many one of the best preserved historic structures in the Southwest. Sedona’s low levels of pollution make it one of the finest places in Arizona to view the night sky. Sign up for the Evening Sky Tours, and learn about the constellations and stars. Sedona offers unique geology, rich history and outdoor activities, making it a popular and interesting holiday destination.",
       "panoramas": [
-        "assets/images/locations/new-york/360/sedona_02.jpg"
+        "assets/images/locations/sedona/360/sedona_02.jpg"
       ],
       "bookLink":"https://www.expedia.com/Phoenix.d178298.Destination-Travel-Guides",
       "thumbnail":"assets/images/locations/phoenix/thumbnails/thumbnail-phoenix.webp",
