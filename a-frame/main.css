@@ -1,0 +1,83 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+#google-map {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 25%;
+  height: 25%;
+  z-index: 20;
+}
+
+#gui-top-left {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  /* height: 6rem; */
+  max-width: 50%;
+  z-index: 20;
+  background: rgba(192, 192, 192, 0);
+}
+
+#gui-bottom-left {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  /* height: 6rem; */
+  /* max-width: 50%; */
+  z-index: 20;
+  background: rgba(192, 192, 192, 0.5);
+}
+
+#gui-bottom-right {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  /* height: 6rem; */
+  /* max-width: 50%; */
+  z-index: 20;
+  background: rgba(192, 192, 192, 0.5);
+}
+
+#div-location-card {
+  width: 24rem;
+  border: 0;
+}
+
+.btn-bottom-right {
+  font-size: 2rem !important;
+}
+
+html {
+  font-size: 8px !important;
+}
+
+@media (min-width: 576px) {
+  html {
+    font-size: 10px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 10px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 10px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 16px !important;
+  }
+}
