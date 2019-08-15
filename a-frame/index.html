@@ -53,16 +53,23 @@
             <h3 class="card-title ">
               <span id="location-card-name" class="mr-2" style="display: none">
               Phoenix
+
               </span>
-              <button id="button-location-info" class="btn btn-primary mb-1 mt-0 disabled" type="button"
-              data-toggle="modal" data-target="#modal-location-info"
+
+              <button id="button-location-info" class="btn btn-primary disabled" type="button"
+              data-toggle="modal" data-target="#modal-location-info" style="position:relative; bottom:0.2rem;"
               >
 
                   More Info
-                  <!-- <i class="fas fa-info ml-1"></i> -->
               </button>
             </h3>
+            <!-- <button id="button-location-info" class="btn btn-primary mb-1 mt-0 disabled" type="button"
+            data-toggle="modal" data-target="#modal-location-info" style="position:absolute"
+            >
 
+                More Info
+            </button> -->
+            <h5 id="location-card-country" class="mb-4">United States Of America</h5>
           </div>
 
           <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
@@ -87,20 +94,21 @@
           <div class="btn-group " role="group" aria-label="Button group with nested dropdown">
 
             <div class="btn-group" role="group">
-              <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle btn-bottom-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button id="button-region" type="button" class="btn btn-primary dropdown-toggle btn-bottom-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Region: Global
               </button>
               <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item" href="#" onclick="onClickRegionOption('Global')">Global</a>
+                <a class="dropdown-item" href="#" onclick="onClickRegionOption('Europe')">Europe</a>
+                <a class="dropdown-item" href="#" onclick="onClickRegionOption('Asia')">Asia</a>
+                <a class="dropdown-item" href="#" onclick="onClickRegionOption('South America')">South America</a>
 
-                <a class="dropdown-item" href="#" onclick="onClickRegionOption()">Europe</a>
-                <a class="dropdown-item" href="#">Asia</a>
-                <a class="dropdown-item" href="#">South America</a>
-                <a class="dropdown-item" href="#">Australia & South Pacific</a>
-                <a class="dropdown-item" href="#">Mexico & Central America</a>
-                <a class="dropdown-item" href="#">North America</a>
-                <a class="dropdown-item" href="#">Caribean</a>
-                <a class="dropdown-item" href="#">Africa & Indian Ocean</a>
-                <a class="dropdown-item" href="#">Middle East</a>
+                <!-- <a class="dropdown-item" href="#" onclick="onClickRegionOption('South America')">Mexico & Central America</a> -->
+                <a class="dropdown-item" href="#" onclick="onClickRegionOption('North America')">North America</a>
+                <a class="dropdown-item" href="#" onclick="onClickRegionOption('Australia')">Australia</a>
+                <!-- <a class="dropdown-item" href="#" onclick="onClickRegionOption('South America')">Caribean</a> -->
+                <a class="dropdown-item" href="#" onclick="onClickRegionOption('Africa')">Africa</a>
+                <!-- <a class="dropdown-item" href="#" onclick="onClickRegionOption('Middle East')">Middle East</a> -->
               </div>
             </div>
             <button type="button" class="btn btn-success btn-bottom-right" onclick="onClickNextLocationButton()">Next
@@ -123,16 +131,28 @@
 
     <!-- Modal -->
     <div class="modal fade" id="modal-help" tabindex="-1" role="dialog" aria-labelledby="modal-help-title" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="modal-help-long-title">Help!</h5>
+            <h2 class="modal-title" id="modal-help-long-title">Need Help?</h2>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+              <span aria-hidden="true" style="font-size:2rem">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            Bla bla bla...
+          <div class="modal-body m-4" style="font-size:1.5rem">
+            <p class="mb-5">Well, you should be able to see 4 GUI sections in the app.</p>
+            <p class="my-5">At the bottom right corner,<br>
+            You can click the "Next" button to go to a new random location;<br>
+            You can click the "Previous" button to go to the previously viewed location;<br>
+            You can click the "Region: ..." button to select the region that you want to go;<br>
+            You can click the "Roam" button to view different 360 images at the same city.</p>
+            <p class="my-5">At the bottom left corner,<br>
+              you can find the city and country names of the location;<br>
+              You can click the "More Info" button to see more information about the location;<br>
+              You can click the "BOOK A VACATION!" button to go to the corresponding Expedia sale page to find some great travel packages related to the location.</p>
+            <p class="my-5">At the top right corner,<br>
+              you can find an embedded Google Map that displays the geographic information of the location.</p>
+
           </div>
           <!-- <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -145,14 +165,18 @@
     <div class="modal fade" id="modal-location-info" tabindex="-1" role="dialog" aria-labelledby="modal-location-info-title" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title mx-auto" id="modal-location-info-long-title" >Phoenix</h2>
-            <button type="button" class="close" data-dismiss="modal" style="position:absolute; right:1rem; " aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+          <div class="modal-header d-block text-center">
+            <h1 class="modal-title mb-2" id="modal-location-info-long-title" >Phoenix</h1>
+
+            <button type="button" class="close" data-dismiss="modal" style="position:absolute; right:1rem; top:1rem" aria-label="Close">
+              <span aria-hidden="true" style="font-size:2rem">&times;</span>
             </button>
+
+            <h5 id="modal-location-country" class="">United States Of America</h5>
           </div>
-          <div class="modal-body mx-4" style="">
-            <img id="modal-location-thumbnail" src="assets/images/locations/phoenix/thumbnails/thumbnail-phoenix.webp" style="width:100%">
+          <div class="modal-body m-4" style="">
+            <img id="modal-location-thumbnail" class="mb-3" src="assets/images/locations/phoenix/thumbnails/thumbnail-phoenix.webp" style="width:100%">
+            <h2 class="mt-4" id="modal-location-description-title" >Explore Grand Canyon: its hiking, natural setting, camping, and more!</h2>
             <p id="modal-location-description" class="mt-4" style="font-size:1.5rem">
             </P>
           </div>

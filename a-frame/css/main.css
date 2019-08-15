@@ -53,7 +53,12 @@ html, body {
 
 #div-location-card {
   width: 16rem;
+  background: rgba(255,255,255,0.5);
   /* border: 0; */
+}
+
+#location-card-thumbnail{
+  opacity:0.75;
 }
 
 #three-container {
@@ -96,6 +101,10 @@ html, body {
     pointer-events: none;
 }
 
+.dropdown-item {
+  font-size: 1.2rem !important;
+}
+
 @media (min-width: 576px) {
 
 }
@@ -109,6 +118,10 @@ html, body {
     font-size: 1.8rem !important;
   }
 
+  .dropdown-item {
+    font-size: 1.5rem !important;
+  }
+
   #button-help {
     font-size:1.8rem;
     width: 3.6rem;
@@ -116,7 +129,7 @@ html, body {
   }
 
   #div-location-card {
-    width: 24rem;
+    width: 16rem;
   }
 
   #div-location-card-body {
@@ -139,5 +152,7 @@ html, body {
 }
 
 @media (min-width: 1200px) {
-
+  #div-location-card {
+    width: 20rem;
+  }
 }
