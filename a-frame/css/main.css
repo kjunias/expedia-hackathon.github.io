@@ -67,6 +67,10 @@ html, body {
   /* border: 0; */
 }
 
+#location-card-country {
+  font-size: 15px;
+}
+
 #location-card-thumbnail{
   opacity:0.75;
 }
