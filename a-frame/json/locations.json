@@ -8,8 +8,8 @@
       "panoramas": [
         "assets/images/locations/chicago/360/chicago_01.jpg"
       ],
-      "bookLink":"https://www.expedia.com/Phoenix.d178298.Destination-Travel-Guides",
-      "thumbnail":"assets/images/locations/phoenix/thumbnails/thumbnail-phoenix.webp",
+      "bookLink":"https://www.expedia.com/Chicago.d178248.Destination-Travel-Guides",
+      "thumbnail":"assets/images/locations/chicago/thumbnails/chicago.webp",
       "googleMapEmbedUrl":"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJy3mhUO0SK4cRrBtKNfjHaYw&key=AIzaSyD4GLXldhnA6Fcc6yJ9WqxEJrqM59b9RMk",
       "region":""
     },
@@ -19,12 +19,11 @@
       "title": "Experience the theater, museums, and art in Denver!",
       "description": "Denver’s nickname, Mile High City, comes from its 5,280-foot (1,600-meter) elevation above sea level. Its setting in the Rocky Mountains gives the city great natural beauty and 300 days of sunshine annually. Enjoy its outdoor excitement and great cultural activities. Hop on the free shuttle bus running along the 1-mile (1.6-kilometer) long pedestrianized 16th Street Mall. The street features numerous shopping, dining and entertainment choices. Bring your ID to tour the Money Museum at the Federal Reserve Bank of Kansas City, Denver Branch and walk out with a bag of shredded money. Beyond the mall’s southern end, look for the Colorado State Capitol Building’s golden dome. Near the northern end is Larimer Square, a shopping and dining area with historic structures from the 1800s. A few blocks east, watch the Colorado Rockies play baseball at Coors Field. Travel west to tailgate at Sports Authority Field at Mile High where the Broncos play NFL football. Plan a family vacation with varied activities. See shade, water, ornamental and Western landscapes at the Denver Botanic Gardens in downtown Denver. Walk north to City Park for the Denver Zoo, the Denver Museum of Nature and Science and the City Park Golf Course. Drive west through the pleasant residential neighborhood of Lakewood to reach Red Rocks Park and Amphitheatre, where the natural acoustics of this beautiful setting enhance major concerts. Colorado has some of the country’s best skiing, with wide glades, powder bowls and steep mogul fields. Travel to top resorts within a 90-minute drive north or west of Denver including Echo Mountain, Eldora, Keystone, Loveland and Winter Park. These and other areas in the Rocky Mountains and foothills also offer exciting non-winter activities of hiking, mountain biking, fishing, hunting and boating. Drive north about 1.5 hours out of Denver to approach Rocky Mountain National Park. View Longs Peak and explore some of the park’s 150 lakes and 450 miles (725 kilometers) of streams. Look for bighorn sheep, moose and beavers in this huge designated wilderness area.",
       "panoramas": [
-
         "assets/images/locations/denver/360/denver_aquarium_01.jpg",
         "assets/images/locations/denver/360/denver_aquarium_02.jpg"
       ],
-      "bookLink":"https://www.expedia.com/Phoenix.d178298.Destination-Travel-Guides",
-      "thumbnail":"assets/images/locations/phoenix/thumbnails/thumbnail-phoenix.webp",
+      "bookLink":"https://www.expedia.com/Denver.d178254.Destination-Travel-Guides",
+      "thumbnail":"assets/images/locations/denver/thumbnails/denver.webp",
       "googleMapEmbedUrl":"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJy3mhUO0SK4cRrBtKNfjHaYw&key=AIzaSyD4GLXldhnA6Fcc6yJ9WqxEJrqM59b9RMk"
     },
     {
@@ -35,8 +34,8 @@
       "panoramas": [
         "assets/images/locations/grand-canyon/360/grand-canyon_01.jpg"
       ],
-      "bookLink":"https://www.expedia.com/Phoenix.d178298.Destination-Travel-Guides",
-      "thumbnail":"assets/images/locations/phoenix/thumbnails/thumbnail-phoenix.webp",
+      "bookLink":"https://www.expedia.com/Grand-Canyon.d6140738.Destination-Travel-Guides",
+      "thumbnail":"assets/images/locations/grand-canyon/thumbnails/grand-canyon.webp",
       "googleMapEmbedUrl":"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJy3mhUO0SK4cRrBtKNfjHaYw&key=AIzaSyD4GLXldhnA6Fcc6yJ9WqxEJrqM59b9RMk"
     },
     {
@@ -47,8 +46,8 @@
       "panoramas": [
         "assets/images/locations/new-york/360/new-york_01.jpg"
       ],
-      "bookLink":"https://www.expedia.com/Phoenix.d178298.Destination-Travel-Guides",
-      "thumbnail":"assets/images/locations/phoenix/thumbnails/thumbnail-phoenix.webp",
+      "bookLink":"https://www.expedia.com/New-York.d178293.Destination-Travel-Guides",
+      "thumbnail":"assets/images/locations/new-york/thumbnails/new-york.webp",
       "googleMapEmbedUrl":"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJy3mhUO0SK4cRrBtKNfjHaYw&key=AIzaSyD4GLXldhnA6Fcc6yJ9WqxEJrqM59b9RMk"
     },
     {
@@ -72,8 +71,8 @@
       "panoramas": [
         "assets/images/locations/sedona/360/sedona_02.jpg"
       ],
-      "bookLink":"https://www.expedia.com/Phoenix.d178298.Destination-Travel-Guides",
-      "thumbnail":"assets/images/locations/phoenix/thumbnails/thumbnail-phoenix.webp",
+      "bookLink":"https://www.expedia.com/Sedona.d6054771.Destination-Travel-Guides",
+      "thumbnail":"assets/images/locations/sedona/thumbnails/sedona.webp",
       "googleMapEmbedUrl":"https://www.google.com/maps/embed/v1/place?q=place_id:ChIJy3mhUO0SK4cRrBtKNfjHaYw&key=AIzaSyD4GLXldhnA6Fcc6yJ9WqxEJrqM59b9RMk"
     }
   ]
