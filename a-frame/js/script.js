@@ -3,9 +3,10 @@ var currentPanoramaIndex;
 var previousLocationsId = [];
 var allLocationsId = [];
 var cachedLocationsData = {};
+var currentRegion = "Global";
 
 var locationCardName = $("#location-card-name");
-console.log(locationCardName);
+// console.log(locationCardName);
 var locationCardThumbnail = $("#location-card-thumbnail");
 var locationCardInfoButton = $("#button-location-info");
 var locationCardBookButton = $("#button-location-card-book");
@@ -14,7 +15,13 @@ var locationModalThumbnail = $("#modal-location-thumbnail");
 var locationModalDescription = $("#modal-location-description");
 var previousLocationButton = $("#button-previous-location");
 
+var regionButton = $("#button-region");
+
 var googleMap = $("#google-map")
+
+var locationCardCountry = $("#location-card-country");
+var locationModalCountry = $("#modal-location-country");
+var locationModalDescriptionTitle = $("#modal-location-description-title");
 
 function getLocationsData(onSuccess, onError){
   fetch('json/locations.json')
@@ -66,6 +73,10 @@ function setCurrentLocation(newLocationId){
   locationModalTitle.html(locationData.cityName);
   locationModalThumbnail.attr("src", locationData.thumbnail);
   locationModalDescription.html(locationData.description);
+
+  locationCardCountry.html(locationData.country);
+  locationModalCountry.html(locationData.country);
+  locationModalDescriptionTitle.html(locationData.title);
 
   googleMap.attr("src",locationData.googleMapEmbedUrl);
 
@@ -159,4 +170,10 @@ function onClickPreviousLocationButton(){
   if(previousLocationsId.length==0) {
     previousLocationButton.addClass("disabled");
   }
+}
+
+function onClickRegionOption(region){
+  console.log("onClickRegionOption",region);
+  currentRegion = region;
+  regionButton.html("Region: "+region);
 }
