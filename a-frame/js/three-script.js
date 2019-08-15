@@ -39,12 +39,12 @@ camera.position.z = 8;
 // var cube = new THREE.Mesh( geometry, material );
 // scene.add( cube );
 
-var geometry = new THREE.SphereBufferGeometry( 1000, 64, 64 );
-geometry.scale( - 1, 1, 1 );
-var texture = new THREE.TextureLoader().load( 'assets/images/locations/phoenix/360/phoenix_01.jpg' );
-var material = new THREE.MeshBasicMaterial( { map: texture } );
-var mesh = new THREE.Mesh( geometry, material );
-scene.add( mesh );
+var skyboxGeometry = new THREE.SphereBufferGeometry( 1000, 64, 64 );
+skyboxGeometry.scale( - 1, 1, 1 );
+var skyboxTexture = new THREE.TextureLoader().load( 'assets/images/locations/phoenix/360/phoenix_01.jpg' );
+var skyboxMaterial = new THREE.MeshBasicMaterial( { map: skyboxTexture } );
+var skyboxMesh = new THREE.Mesh( skyboxGeometry, skyboxMaterial );
+scene.add( skyboxMesh );
 
 // scene.add( new THREE.AmbientLight( 0xffffff, 2 ) );
 // var pointLight = new THREE.PointLight( 0xffffff, 2 );
@@ -116,4 +116,9 @@ if ( THREE.WEBGL.isWebGLAvailable() ) {
 
   var warning = WEBGL.getWebGLErrorMessage();
   document.getElementById( 'three-container' ).appendChild( warning );
+}
+
+function setSkyboxTexture(src){
+  skyboxMesh.material.map = new THREE.TextureLoader().load( src );
+  skyboxMesh.material.needsUpdate = true;
 }
