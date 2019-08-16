@@ -123,8 +123,13 @@ getLocationsData((data)=>{
     if(cachedRegionLocationsId['Global']==null) cachedRegionLocationsId['Global']=[];
     cachedRegionLocationsId['Global'].push(locationData.cityName);
 
+    locationData.backgrounds.forEach(background=>{
+      preloadTexture(background.panorama);
+    });
+
   });
-    console.log(cachedRegionLocationsId);
+  console.log(cachedRegionLocationsId);
+  console.log(cachedTextures);
   let newLocationId = getRandomLocation();
 
   setCurrentLocation(newLocationId);

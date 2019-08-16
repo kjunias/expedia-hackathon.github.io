@@ -170,6 +170,10 @@ function setSkyboxTexture(src){
   skyboxMesh.material.needsUpdate = true;
 }
 
+function preloadTexture(src){
+  if(cachedTextures[src]==null) cachedTextures[src] = textureLoader.load( src );
+}
+
 function setParticles(newParticles){
   if(particlesShown){
     scene.remove(particleSystem.particleGroup.mesh);
