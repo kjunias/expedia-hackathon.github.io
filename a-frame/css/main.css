@@ -11,9 +11,10 @@ html, body {
   position: absolute;
   top: 2rem;
   right: 2rem;
-  width: 25%;
+  width: 20%;
   height: 25%;
   z-index: 20;
+  border: none;
 }
 
 #gui-top-left {
@@ -101,7 +102,7 @@ html, body {
 } */
 #button-roam-around {
   position: absolute;
-  bottom: 8rem;
+  bottom: 9rem;
   right: 2rem;
   z-index: 20;
   border-radius: 2rem;
@@ -114,7 +115,7 @@ html, body {
 }
 
 .btn {
-  font-size: 1.5rem !important;
+  font-size: 1.55rem !important;
 }
 
 .btn.disabled {
@@ -151,17 +152,17 @@ html, body {
 
 @media (min-width: 992px) {
   .btn {
-    font-size: 1.8rem !important;
+    font-size: 1.55rem !important;
   }
 
   .dropdown-item {
     font-size: 1.5rem !important;
   }
 
-  #button-help {
-    font-size:1.8rem;
-    width: 3.6rem;
-    height: 3.6rem;"
+  button#button-help {
+    font-size: 1.2rem !important;
+    width: 2.6rem !important;;
+    height: 2.6rem !important;;
   }
 
   #div-location-card {
@@ -173,12 +174,7 @@ html, body {
   }
 
   #gui-bottom-right {
-
     padding: 0.8rem;
-  }
-
-  #button-roam-around {
-    bottom: 10rem;
   }
 
   /* #button-region {
