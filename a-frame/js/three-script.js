@@ -16,7 +16,7 @@ controls.dampingFactor = 0.05;
 controls.screenSpacePanning = false;
 controls.minDistance = 100;
 controls.maxDistance = 500;
-controls.maxPolarAngle = Math.PI / 2;
+// controls.maxPolarAngle = Math.PI / 2;
 
 var cachedTextures = {};
 // controls = new THREE.TrackballControls( camera, renderer.domElement );
