@@ -46,6 +46,11 @@ function getLocationsData(onSuccess, onError){
   });
 }
 
+var bgmAudio = document.getElementById("audio-bgm");
+bgmAudio.autoplay = true;
+bgmAudio.load();
+bgmAudio.play();
+
 function getRandomLocation(){
   if(cachedRegionLocationsId[currentRegion]==null){
     cachedRegionLocationsId[currentRegion] = cachedRegionLocationsId['Global'].filter(locationId=>cachedLocationsData[locationId].region==currentRegion);
