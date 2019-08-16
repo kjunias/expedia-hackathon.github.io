@@ -124,6 +124,22 @@ html, body {
   font-size: 1.2rem !important;
 }
 
+#button-roam-around {
+  color: #ffffffde;
+}
+
+#button-region {
+  background-color: #007bffcc;
+}
+
+#button-previous-location {
+  background-color: #007bffcc;
+}
+
+#button-next-location {
+  background-color: #ffc107cc;
+}
+
 @media (min-width: 576px) {
 
 }
@@ -162,10 +178,9 @@ html, body {
 
   #button-roam-around {
     bottom: 10rem;
-    color: #ffffffde;
   }
 
-  #button-region {
+  /* #button-region {
     background-color: #007bff6e;
   }
 
@@ -175,7 +190,7 @@ html, body {
 
   #button-next-location {
     background-color: #ffc107a3;
-  }
+  } */
 
   #button-location-info {
     font-size:1.2rem !important;

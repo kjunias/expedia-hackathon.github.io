@@ -19,6 +19,8 @@
     <script src="vendors/three/three.min.js"></script>
     <script src="vendors/three/WebGL.js"></script>
     <script src="vendors/three/OrbitControls.js"></script>
+    <script src="vendors/particle-system/SPE.js"></script>
+    <script src="vendors/particle-system/aframe-particle-system.js"></script>
     <script src="js/script.js" defer></script>
     <script src="js/three-script.js" defer></script>
     <!-- <script src="vendors/three/TrackballControls.js"></script> -->
@@ -56,7 +58,7 @@
 
               </span>
             </h3>
-            <div id="card-summary">Experience the theater, museums, and art in Denver... <a id="card-more-info-link">more info</a></div>
+            <div id="card-summary">Experience the theater, museums, and art in Denver... <a id="card-more-info-link" data-toggle="modal" data-target="#modal-location-info">more info</a></div>
           </div>
 
           <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
@@ -109,7 +111,7 @@
     </div>
     <button
     id="button-roam-around"
-    class="btn btn-outline-secondary btn-lg" style="color:white" onclick="onClickRoamButton()"><i class="fas fa-random ml-1 fa-lg"></i>
+    class="btn btn-outline-secondary btn-lg" style="color:white" onclick="onClickChangeBackgroundButton()"><i class="fas fa-random ml-1 fa-lg"></i>
     </button>
 
     <!-- Modal -->
@@ -164,7 +166,7 @@
             </P>
           </div>
           <div class="modal-footer " style="text-align: center;">
-            <button type="button" class="btn btn-danger mx-auto my-2 btn-lg" data-dismiss="modal" onclick="onClickBookVacationButton()">BOOK A VACATION!</button>
+            <button type="button" class="btn btn-warning mx-auto my-2 btn-lg" data-dismiss="modal" onclick="onClickBookVacationButton()">BOOK THIS TRIP</button>
             <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
           </div>
         </div>

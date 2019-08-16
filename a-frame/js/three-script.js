@@ -18,6 +18,7 @@ controls.minDistance = 100;
 controls.maxDistance = 500;
 controls.maxPolarAngle = Math.PI / 2;
 
+var cachedTextures = {};
 // controls = new THREE.TrackballControls( camera, renderer.domElement );
 //   controls.rotateSpeed = 1.0;
 //   controls.zoomSpeed = 1.2;
@@ -38,65 +39,110 @@ camera.position.z = 8;
 // var material = new THREE.MeshBasicMaterial( { color: 0x00ff00, wireframe:true } );
 // var cube = new THREE.Mesh( geometry, material );
 // scene.add( cube );
+var textureLoader = new THREE.TextureLoader();
 
 var skyboxGeometry = new THREE.SphereBufferGeometry( 1000, 64, 64 );
 skyboxGeometry.scale( - 1, 1, 1 );
-var skyboxTexture = new THREE.TextureLoader().load( 'assets/images/locations/phoenix/360/phoenix_01.jpg' );
-var skyboxMaterial = new THREE.MeshBasicMaterial( { map: skyboxTexture } );
+// var skyboxTexture = textureLoader.load( 'assets/images/locations/phoenix/360/phoenix_01.jpg' );
+var skyboxMaterial = new THREE.MeshBasicMaterial(  );
 var skyboxMesh = new THREE.Mesh( skyboxGeometry, skyboxMaterial );
 scene.add( skyboxMesh );
-
-// scene.add( new THREE.AmbientLight( 0xffffff, 2 ) );
-// var pointLight = new THREE.PointLight( 0xffffff, 2 );
-// pointLight.position.copy( camera.position );
-// scene.add( pointLight );
 
 // var stats = new Stats();
 // container.appendChild( stats.dom );
 
-// var loader = new THREE.FontLoader();
+// var snowParticleCount = 2000;
+// var snowSprite = textureLoader.load( 'assets/images/sprites/snowflake1.png' );
+// var snowParticleMaterial = new THREE.PointCloudMaterial({
+//    color: 0xFFFFFF,
+//    size: 4,
+//    blending: THREE.AdditiveBlending,
+//    depthTest: false,
+//    transparent: true,
+//    map: snowSprite,
+// });
+// var snowParticlesGeometry = new THREE.Geometry;
+// for (var i = 0; i < snowParticleCount; i++) {
+//     var pX = Math.random()*1000 - 500,
+//     pY = Math.random()*1000 - 250,
+//     pZ = Math.random()*1000 - 500,
+//     particle = new THREE.Vector3(pX, pY, pZ);
+//     particle.velocity = {};
+//     particle.velocity.y = -1;
+//     snowParticlesGeometry.vertices.push(particle);
+// }
+// var snowParticlesPointCloud = new THREE.PointCloud(snowParticlesGeometry, snowParticleMaterial);
+
+// scene.add(snowParticlesPointCloud);
+
+// var updateSnowParticles = function(){
+//   var pCount = snowParticleCount;
+//   while (pCount--) {
+//     let particle = snowParticlesGeometry.vertices[pCount];
+//     if (particle.y < -200) {
+//       particle.y = 1000;
+//       particle.velocity.y = -1.2;
+//     }
 //
-// loader.load( 'fonts/helvetiker_regular.typeface.json', function ( font ) {
-//   var geometry = new THREE.PlaneGeometry( 6, 4, 1 );
-//   var material = new THREE.MeshBasicMaterial( {color: 0x666666, side: THREE.DoubleSide, opacity: 0.75, transparent: true} );
-//   var plane = new THREE.Mesh( geometry, material );
-//   plane.position.set(0,0,4);
-//   scene.add( plane );
+//     particle.velocity.y -= Math.random() * .02;
 //
-//   var textGeometry = new THREE.TextGeometry( 'Press button to start!', {
-//     font: font,
-//       size: 16,
-//       height: 4,
-//       curveSegments: 24
-//       // bevelEnabled: false,
-//       // bevelThickness: 1,
-//       // bevelSize: 1,
-//       // bevelOffset: 0,
-//       // bevelSegments: 1
-//   } );
+//     particle.y += particle.velocity.y;
+//   }
 //
-//   var textMaterials = new THREE.MeshBasicMaterial({color:0xffffff});
+//   snowParticlesGeometry.verticesNeedUpdate = true;
+// };
+var particlesShown = false;
+var particleSystem = new AFrameParticleSystem();
+particleSystem.init();
+// scene.add(aFrameParticleSystem.particleGroup.mesh);
+
+// scene.remove(aFrameParticleSystem.particleGroup.mesh);
+// aFrameParticleSystem.data.preset="rain";
+// aFrameParticleSystem.update();
+// scene.add(aFrameParticleSystem.particleGroup.mesh);
+
+// var geometry = new THREE.BufferGeometry();
+// var textureLoader = new THREE.TextureLoader();
+// var sparkSprite = textureLoader.load( 'assets/images/sprites/spark1.png' );
+// var vertices = [];
+// for ( var i = 0; i < 10000; i ++ ) {
+//   var x = Math.random() * 2000 - 1000;
+//   var y = Math.random() * 2000 - 1000;
+//   var z = Math.random() * 2000 - 1000;
+//   vertices.push( x, y, z );
+// }
+// geometry.addAttribute( 'position', new THREE.Float32BufferAttribute( vertices, 3 ) );
+// var color = [ 1.0, 0.2, 0.5 ];
+// var sprite = sparkSprite;
+// var size = 15;
+// var material = new THREE.PointsMaterial( { size: size, map: sprite, blending: THREE.AdditiveBlending, depthTest: false, transparent: true } );
+// material.color.setHSL( color[ 0 ], color[ 1 ], color[ 2 ] );
+// var particles = new THREE.Points( geometry, material );
+// particles.rotation.x = Math.random() * 6;
+// particles.rotation.y = Math.random() * 6;
+// particles.rotation.z = Math.random() * 6;
+// // scene.add( particles );
 //
-//   var textMesh = new THREE.Mesh( textGeometry, textMaterials );
-//   console.log(textGeometry);
-//   console.log(textMesh);
-//   textMesh.position.set( -1, 0, 0 );
-//   textMesh.scale.set(0.01,0.01,0.0001);
-//   plane.add( textMesh );
-// } );
+// var updateSparkParticles = function(delta){
+//   particles.rotation.y +=  delta * 1;
+// };
 
 var clock = new THREE.Clock();
 
 var update = function(){
 
-
   var delta = clock.getDelta();
   // mixer.update( delta );
   controls.update( delta );
-
+  // updateSnowParticles();
+  // updateSparkParticles(delta);
   // stats.update();
   // console.log(stats);
   // console.log(stats.fps);
+  if(particlesShown){
+    particleSystem.tick(null,delta);
+  }
+
 }
 
 var render = function(){
@@ -119,6 +165,20 @@ if ( THREE.WEBGL.isWebGLAvailable() ) {
 }
 
 function setSkyboxTexture(src){
-  skyboxMesh.material.map = new THREE.TextureLoader().load( src );
+  if(cachedTextures[src]==null) cachedTextures[src] = textureLoader.load( src );
+  skyboxMesh.material.map = cachedTextures[src];
   skyboxMesh.material.needsUpdate = true;
+}
+
+function setParticles(newParticles){
+  if(particlesShown){
+    scene.remove(particleSystem.particleGroup.mesh);
+    particlesShown = false;
+  }
+  if(newParticles!=null){
+    particleSystem.data.preset=newParticles;
+    particleSystem.update();
+    scene.add(particleSystem.particleGroup.mesh);
+    particlesShown = true;
+  }
 }

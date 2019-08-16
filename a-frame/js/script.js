@@ -1,5 +1,5 @@
 var currentLocationId;
-var currentPanoramaIndex;
+var currentBackgroundIndex;
 var previousLocationsId = [];
 var allLocationsId = [];
 var cachedLocationsData = {};
@@ -23,14 +23,16 @@ var locationCardCountry = $("#location-card-country");
 var locationModalCountry = $("#modal-location-country");
 var locationModalDescriptionTitle = $("#modal-location-description-title");
 
+var cardSummary = $("#card-summary");
+console.log(cardSummary);
+
+
 function getLocationsData(onSuccess, onError){
   fetch('json/locations.json')
   .then(function(response) {
-    console.log(response);
     return response.json();
   })
   .then(function(json) {
-    console.log(json);
     if(onSuccess!=null){
       onSuccess(json);
     }
@@ -80,69 +82,64 @@ function setCurrentLocation(newLocationId){
 
   googleMap.attr("src",locationData.googleMapEmbedUrl);
 
-  currentPanoramaIndex=0;
-  setSkyboxTexture(locationData.panoramas[currentPanoramaIndex]);
+  let newCardSummary = locationData.title.substring(0, locationData.title.length-1);
 
+  cardSummary.contents().filter(function(){ return this.nodeType == 3; }).first().replaceWith(newCardSummary+"... ");
+
+  currentBackgroundIndex=0;
+  setSkyboxTexture(locationData.backgrounds[currentBackgroundIndex].panorama);
+  setParticles(locationData.backgrounds[currentBackgroundIndex].particles);
 }
 
-// setCurrentPanorama(currentPanoramaIndex){
+// setCurrentPanorama(currentBackgroundIndex){
 //
 // }
 
-getLocationsData((data)=>{
-  data.destinations.forEach(locationData=>{
-    cachedLocationsData[locationData.cityName] = locationData;
-    allLocationsId.push(locationData.cityName);
-  });
-
-  // allLocationsId = Object.keys(cachedLocationsData);
-
-  // allLocationsId.forEach(locationId=>{
-  //   cachedLocationsData[locationId].panoramas = cachedLocationsData[locationId].panoramas.split(",");
-  // });
-
-  console.log(cachedLocationsData);
-  console.log(allLocationsId);
-
-  let newLocationId = getRandomLocation();
-
-  console.log("newLocationId: "+newLocationId);
-
-  // if(cachedLocationsData[newLocationId]==null){
-  //   getLocationData(newLocationId, (data)=>{
-  //     cachedLocationsData[newLocationId] = data;
-  //     cachedLocationsData[newLocationId]
-  //
-  //     setCurrentLocation(newLocationId);
-  //   },
-  //   ()=>{
-  //     console.log("Failed to get location "+newLocation+" data",error);
-  //   })
-  //
-  //   return;
-  // }
-  setCurrentLocation(newLocationId);
-
-
-},(error)=>{
-  console.log("Failed to get locations data",error);
-});
+// getLocationsData((data)=>{
+//   data.destinations.forEach(locationData=>{
+//     cachedLocationsData[locationData.cityName] = locationData;
+//     allLocationsId.push(locationData.cityName);
+//   });
+//
+//   let newLocationId = getRandomLocation();
+//
+//   setCurrentLocation(newLocationId);
+//
+// },(error)=>{
+//   console.log("Failed to get locations data",error);
+// });
 
 function onClickBookVacationButton(){
   console.log("onClickBookVacationButton");
   window.open(cachedLocationsData[currentLocationId]["bookLink"],'_blank')
 }
 
-function onClickRoamButton(){
+function onClickChangeBackgroundButton(){
 
   let locationData = cachedLocationsData[currentLocationId];
-  currentPanoramaIndex=(currentPanoramaIndex+1)%locationData.panoramas.length;
-  console.log(currentPanoramaIndex);
-  console.log(locationData.panoramas[currentPanoramaIndex]);
-  setSkyboxTexture(locationData.panoramas[currentPanoramaIndex]);
+  currentBackgroundIndex=(currentBackgroundIndex+1)%locationData.backgrounds.length;
+  console.log(currentBackgroundIndex);
+  console.log(locationData.backgrounds[currentBackgroundIndex]);
+  setSkyboxTexture(locationData.backgrounds[currentBackgroundIndex].panorama);
+  setParticles(locationData.backgrounds[currentBackgroundIndex].particles);
 }
 
 function onClickNextLocationButton(){
+  if(allLocationsId.length==0){
+    console.log("allLocationsId.length==0!");
+    getLocationsData((data)=>{
+      data.destinations.forEach(locationData=>{
+        cachedLocationsData[locationData.cityName] = locationData;
+        allLocationsId.push(locationData.cityName);
+      });
+      onClickNextLocationButton();
+
+    },(error)=>{
+      console.log("Failed to get locations data",error);
+    });
+    return;
+  }
+
   let newLocationId;
   while(true){
     newLocationId = getRandomLocation();
@@ -160,11 +157,16 @@ function onClickNextLocationButton(){
 
 function onClickPreviousLocationButton(){
   if(previousLocationsId.length==0) {
+    previousLocationButton.addClass("disabled");
     console.log("There is no previous location!");
     return;
   }
 
   let previousLocationId = previousLocationsId.pop();
+  if(previousLocationId==null){
+    previousLocationButton.addClass("disabled");
+    return;
+  }
   setCurrentLocation(previousLocationId);
 
   if(previousLocationsId.length==0) {
