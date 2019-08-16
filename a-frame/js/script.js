@@ -91,23 +91,19 @@ function setCurrentLocation(newLocationId){
   setParticles(locationData.backgrounds[currentBackgroundIndex].particles);
 }
 
-// setCurrentPanorama(currentBackgroundIndex){
-//
-// }
+getLocationsData((data)=>{
+  data.destinations.forEach(locationData=>{
+    cachedLocationsData[locationData.cityName] = locationData;
+    allLocationsId.push(locationData.cityName);
+  });
 
-// getLocationsData((data)=>{
-//   data.destinations.forEach(locationData=>{
-//     cachedLocationsData[locationData.cityName] = locationData;
-//     allLocationsId.push(locationData.cityName);
-//   });
-//
-//   let newLocationId = getRandomLocation();
-//
-//   setCurrentLocation(newLocationId);
-//
-// },(error)=>{
-//   console.log("Failed to get locations data",error);
-// });
+  let newLocationId = getRandomLocation();
+
+  setCurrentLocation(newLocationId);
+
+},(error)=>{
+  console.log("Failed to get locations data",error);
+});
 
 function onClickBookVacationButton(){
   console.log("onClickBookVacationButton");
