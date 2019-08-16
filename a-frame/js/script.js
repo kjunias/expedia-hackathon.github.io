@@ -46,10 +46,11 @@ function getLocationsData(onSuccess, onError){
   });
 }
 
-var bgmAudio = document.getElementById("audio-bgm");
-bgmAudio.autoplay = true;
-bgmAudio.load();
-bgmAudio.play();
+// var bgmAudio = document.getElementById("audio-bgm");
+//
+// var bgmAudioLoad = bgmAudio.load();
+// console.log(bgmAudioLoad);
+// bgmAudio.play();
 
 function getRandomLocation(){
   if(cachedRegionLocationsId[currentRegion]==null){

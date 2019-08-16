@@ -112,19 +112,19 @@
       "backgrounds": [
         {
           "panorama":"assets/images/locations/phoenix/360/phoenix_01.jpg",
-          "particles":"star"
+          "particles":"shockwave"
         },
         {
           "panorama":"assets/images/locations/phoenix/360/phoenix_02.jpg",
-          "particles":"star"
+          "particles":"rain"
         },
         {
           "panorama":"assets/images/locations/phoenix/360/phoenix_03.jpg",
-          "particles":"star"
+          "particles":"shockwave"
         },
         {
           "panorama":"assets/images/locations/phoenix/360/phoenix_04.jpg",
-          "particles":"star"
+          "particles":"shockwave"
         }
       ],
       "bookLink":"https://www.expedia.com/Phoenix.d178298.Destination-Travel-Guides",
@@ -288,11 +288,11 @@
         },
         {
           "panorama":"assets/images/locations/venice/360/venice_03.jpg",
-          "particles":"snow"
+          "particles":"bubble"
         },
         {
           "panorama":"assets/images/locations/venice/360/venice_04.jpg",
-          "particles":"star"
+          "particles":"rain"
         }
       ],
       "bookLink":"https://www.expedia.com/Venice.d179981.Destination-Travel-Guides",
@@ -312,15 +312,15 @@
         },
         {
           "panorama":"assets/images/locations/machu-picchu/360/machu-picchu_02.jpg",
-          "particles":"bubble"
+          "particles":"cloud"
         },
         {
           "panorama":"assets/images/locations/machu-picchu/360/machu-picchu_03.jpg",
-          "particles":"snow"
+          "particles":"cloud"
         },
         {
           "panorama":"assets/images/locations/machu-picchu/360/machu-picchu_04.jpg",
-          "particles":"star"
+          "particles":"shockwave"
         }
       ],
       "bookLink":"https://www.expedia.com/Machu-Picchu.d178042.Destination-Travel-Guides",
