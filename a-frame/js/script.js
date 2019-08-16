@@ -1,7 +1,8 @@
 var currentLocationId;
 var currentBackgroundIndex;
 var previousLocationsId = [];
-var allLocationsId = [];
+// var allLocationsId = [];
+var cachedRegionLocationsId = {};
 var cachedLocationsData = {};
 var currentRegion = "Global";
 
@@ -46,9 +47,28 @@ function getLocationsData(onSuccess, onError){
 }
 
 function getRandomLocation(){
+  if(cachedRegionLocationsId[currentRegion]==null){
+    cachedRegionLocationsId[currentRegion] = cachedRegionLocationsId['Global'].filter(locationId=>cachedLocationsData[locationId].region==currentRegion);
+    console.log("cachedRegionLocationsId",currentRegion,cachedRegionLocationsId[currentRegion]);
+  }
+  let locationIds = cachedRegionLocationsId[currentRegion];
 
-  let locationIndex = Math.floor(Math.random() * allLocationsId.length);
-  return allLocationsId[locationIndex];
+  let locationIndex = Math.floor(Math.random() * locationIds.length);
+  let newLocationId = locationIds[locationIndex];
+
+  if(locationIds.length>1){
+    while(true){
+
+      if(newLocationId!=currentLocationId){
+        break;
+      }
+
+      locationIndex = Math.floor(Math.random() * locationIds.length);
+      newLocationId = locationIds[locationIndex];
+    }
+  }
+
+  return newLocationId;
 }
 
 function getLocationData(locationId, onSuccess, onError){
@@ -94,9 +114,11 @@ function setCurrentLocation(newLocationId){
 getLocationsData((data)=>{
   data.destinations.forEach(locationData=>{
     cachedLocationsData[locationData.cityName] = locationData;
-    allLocationsId.push(locationData.cityName);
-  });
+    if(cachedRegionLocationsId['Global']==null) cachedRegionLocationsId['Global']=[];
+    cachedRegionLocationsId['Global'].push(locationData.cityName);
 
+  });
+    console.log(cachedRegionLocationsId);
   let newLocationId = getRandomLocation();
 
   setCurrentLocation(newLocationId);
@@ -121,12 +143,13 @@ function onClickChangeBackgroundButton(){
 }
 
 function onClickNextLocationButton(){
-  if(allLocationsId.length==0){
+  if(cachedRegionLocationsId['Global']==null || cachedRegionLocationsId['Global'].length==0){
     console.log("allLocationsId.length==0!");
     getLocationsData((data)=>{
       data.destinations.forEach(locationData=>{
         cachedLocationsData[locationData.cityName] = locationData;
-        allLocationsId.push(locationData.cityName);
+        if(cachedRegionLocationsId['Global']==null) cachedRegionLocationsId['Global']=[];
+        cachedRegionLocationsId['Global'].push(locationData.cityName);
       });
       onClickNextLocationButton();
 
@@ -137,15 +160,15 @@ function onClickNextLocationButton(){
   }
 
   let newLocationId;
-  while(true){
-    newLocationId = getRandomLocation();
-    if(newLocationId!=currentLocationId){
-      break;
-    }
-  }
-
-  previousLocationsId.push(currentLocationId);
-  console.log(previousLocationButton);
+  // while(true){
+  //   newLocationId = getRandomLocation();
+  //   if(newLocationId!=currentLocationId){
+  //     break;
+  //   }
+  // }
+  newLocationId = getRandomLocation();
+  if(newLocationId!=currentLocationId)  previousLocationsId.push(currentLocationId);
+  // console.log(previousLocationButton);
   previousLocationButton.removeClass("disabled");
 
   setCurrentLocation(newLocationId);
